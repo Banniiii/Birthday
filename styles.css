@@ -1,0 +1,175 @@
+body {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    background-color: #ffebf0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.birthday-text {
+    font-size: 48px;
+    color: #ff1493;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.birthday-image {
+    width: 300px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button i {
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #d14585;
+    transform: scale(1.05);
+}
+
+.cake {
+    position: relative;
+    width: 150px;
+    height: 130px;
+    margin: 20px auto;
+}
+
+.top-layer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 40px;
+    background: #ffb6c1;
+    border-radius: 10px;
+}
+
+.middle-layer {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 50px;
+    background: #ff69b4;
+    border-radius: 10px;
+}
+
+.bottom-layer {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 50px;
+    background: #d14785;
+    border-radius: 10px;
+}
+
+.plate {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 10px;
+    background: #d3d3d3;
+    border-radius: 10px;
+}
+
+.candles {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    display: flex;
+    gap: 10px;
+    transform: translateX(-50%);
+}
+
+.candle {
+    width: 10px;
+    height: 30px;
+    background: red;
+    border-radius: 2px;
+    position: relative;
+}
+
+.flame {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 25px;
+    background: radial-gradient(circle, yellow, orange, red);
+    border-radius: 50%;
+    animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.balloon {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background: radial-gradient(circle, #ff6b81, #ff4757);
+    border-radius: 50%;
+    animation: floatBalloon 6s infinite ease-in-out;
+}
+
+.balloon::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background: #333;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes floatBalloon {
+    0% { transform: translateY(100vh); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* Positioning Random Balloons */
+.balloon:nth-child(1) { left: 10%; animation-duration: 5s; }
+.balloon:nth-child(2) { left: 30%; animation-duration: 6s; }
+.balloon:nth-child(3) { left: 50%; animation-duration: 7s; }
+.balloon:nth-child(4) { left: 70%; animation-duration: 5.5s; }
+.balloon:nth-child(5) { left: 90%; animation-duration: 6.5s; }
