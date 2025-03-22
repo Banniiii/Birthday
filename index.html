@@ -12,7 +12,15 @@
 
     <div class="container">
         <h1 class="birthday-text">Happy Birthday, My Love!</h1>
-        <img src="cath.jpg" alt="Birthday Image" class="birthday-image">
+        <div class="date-time-container">
+            <div class="calendar">
+                <p id="current-date"></p>
+            </div>
+            <div class="clock">
+                <p id="current-time"></p>
+            </div>
+        </div>
+        <img src="cath.jpg" alt="Birthday Image" class="birthday-image"><br><br>
 
         <div class="cake">
             <div class="top-layer"></div>
@@ -39,5 +47,19 @@
         <div class="balloon balloon4"></div>
         <div class="balloon balloon5"></div>
     </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("current-date").innerText = now.toLocaleDateString('en-US', dateOptions);
+
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            document.getElementById("current-time").innerText = now.toLocaleTimeString('en-US', timeOptions);
+        }
+         
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 </html>
