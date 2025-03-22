@@ -11,6 +11,15 @@
         <source src="statue.mp3" type="audio/mp3">
     </audio>
 
+    <div class="date-time-container">
+        <div class="calendar">
+            <p id="current-date"></p>
+        </div>
+        <div class="clock">
+            <p id="current-time"></p>
+        </div>
+    </div>
+
     <div class="container">
         <h1>Happy Birthday, Wifey! 💌</h1>
         <p class="message">
@@ -50,6 +59,18 @@
             setTimeout(() => {
                 audio.play().catch(error => console.log("Autoplay blocked:", error));
             }, 1000);
+
+            function updateDateTime() {
+                const now = new Date();
+                const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.getElementById("current-date").innerText = now.toLocaleDateString('en-US', dateOptions);
+
+                const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+                document.getElementById("current-time").innerText = now.toLocaleTimeString('en-US', timeOptions);
+            }
+            
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
         });
     </script>
 </body>
