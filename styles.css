@@ -16,10 +16,11 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .birthday-text {
+    margin-top: 30px;
     font-size: 48px;
     color: #ff1493;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
